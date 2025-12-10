@@ -16,7 +16,7 @@
                     selects the thumbnail picture.
                 -->
             </div>
-            <video id="media1" class="media" width="80%" controls>
+            <!-- <video id="media1" class="media" width="80%" controls>
                 <source src="@/assets/Unit1-twoPeopleSharingSoda.mp4" type="video/mp4" showControl>
             </video>
 
@@ -36,10 +36,15 @@
 
             <img id="media9" class="media" width="80%" src="">
 
+        -->
+
             <p class="title">
                 {{title}} 
             </p>
+            
+            
             <div id="slide" v-if="!gridEnabled" @touchstart="touchStartMethod" @mousedown="mouseDownMethod" @keyup.left="next()">
+                <!--
                 <div class="page" id="1">
                     <p>
                         <strong>{{ introduction }}</strong>
@@ -69,7 +74,8 @@
                         
                     </p>
                 </div>
-            </div>
+                -->
+            </div> 
 
             <div class="progress-container">
                 <div class="progress-bar" id="myBar"></div>
@@ -80,14 +86,24 @@
 
 <script>
     /// !!! PROBLEMS: 
+    // - Problem with ScrollIntoView functionality
     // - Progress bar doesn't update when resize
     // - Images need to be set as percentage to the overall page
-    // - Problem with ScrollIntoView functionality
+
+    /// *** FUNCTIONALITIES:
+    // - Add choice of percentage height and width to JSON
+    // - Add enlargement upon clicking to photos and images
+    // - Add excercises, podcast and games as a type of media
 
     import unit3 from '/public/content/Unit 3/unit3.json';
     import unit4 from '/public/content/Unit 4/unit4.json';
     import unit5 from '/public/content/Unit 5/unit5.json';
-    
+    import unit6 from '/public/content/Unit 6/unit6.json';
+    import unit7 from '/public/content/Unit 7/unit7.json';
+    import unit8 from '/public/content/Unit 8/unit8.json';
+    import unit9 from '/public/content/Unit 9/unit9.json';
+    import unit10 from '/public/content/Unit 10/unit10.json';
+
     export default {
         props: ["btnText"],
         data() {
@@ -95,7 +111,12 @@
                 units: {
                     unit3,
                     unit4, 
-                    unit5
+                    unit5,
+                    unit6,
+                    unit7,
+                    unit8,
+                    unit9,
+                    unit10
                 },
                 selectedUnit: this.btnText,
 
@@ -122,11 +143,11 @@
 
         mounted() {
             let pageDiv = document.createElement("div");
-            pageDiv.setAttribute("id", "2");
+            pageDiv.setAttribute("id", "1");
             pageDiv.setAttribute("class", "page");
             document.getElementById("slide").appendChild(pageDiv);
 
-            let pageEl = document.getElementById("2")
+            let pageEl = document.getElementById("1")
             
             //Read data from JSON files and display them onto the website based on key/"type"
             for (const key in this.units[this.selectedUnit]) {

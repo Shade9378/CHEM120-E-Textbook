@@ -14,11 +14,11 @@
                     <li @click="selectUnit('unit3')"><router-link to="/unit4">Unit 3. </router-link></li>
                     <li @click="selectUnit('unit4')"><router-link to="/unit4">Unit 4. </router-link></li>
                     <li @click="selectUnit('unit5')"><router-link to="/unit4">Unit 5. </router-link></li>
-                    <li><router-link to="/">Unit 6. </router-link></li>
-                    <li><router-link to="/">Unit 7. </router-link></li>
-                    <li><router-link to="/">Unit 8. </router-link></li>
-                    <li><router-link to="/">Unit 9. </router-link></li>
-                    <li><router-link to="/">Unit 10. </router-link></li>
+                    <li @click="selectUnit('unit6')"><router-link to="/unit4">Unit 6. </router-link></li>
+                    <li @click="selectUnit('unit7')"><router-link to="/unit4">Unit 7. </router-link></li>
+                    <li @click="selectUnit('unit8')"><router-link to="/unit4">Unit 8. </router-link></li>
+                    <li @click="selectUnit('unit9')"><router-link to="/unit4">Unit 9. </router-link></li>
+                    <li @click="selectUnit('unit10')"><router-link to="/unit4">Unit 10. </router-link></li>
                   </ul>
                 </div>
               </div>
